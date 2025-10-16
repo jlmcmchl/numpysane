@@ -683,7 +683,7 @@ from functools import reduce
 import itertools
 import types
 import inspect
-from distutils.version import StrictVersion
+from packaging.version import Version
 
 # setup.py assumes the version is a simple string in '' quotes
 __version__ = '0.42'
@@ -1664,7 +1664,7 @@ def glue(*args, **kwargs):
     '''
     legacy = \
         hasattr(glue, 'legacy_version') and \
-        StrictVersion(glue.legacy_version) <= StrictVersion('0.9')
+        Version(glue.legacy_version) <= Version('0.9')
 
     axis = kwargs.get('axis')
 
@@ -1806,7 +1806,7 @@ def clump(x, **kwargs):
     '''
     legacy = \
         hasattr(clump, 'legacy_version') and \
-        StrictVersion(clump.legacy_version) <= StrictVersion('0.9')
+        Version(clump.legacy_version) <= Version('0.9')
 
 
     n = kwargs.get('n')
